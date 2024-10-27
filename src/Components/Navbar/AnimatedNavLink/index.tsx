@@ -11,7 +11,7 @@ export function AnimatedNavLink({ to, name, ...props }: AnimatedNavLinkProps) {
   return (
     <NavLink
       to={to}
-      className={({ isActive }) =>
+      className={() =>
         `text-navy-500 transition-opacity duration-200 py-2 relative`
       }
       {...props}
