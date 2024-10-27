@@ -6,7 +6,7 @@ export default function LandingPage() {
         <div className="relative min-h-screen w-full overflow-hidden">
             {/* Background gradient */}
             <div
-                className="fixed inset-0 w-full h-full bg-gradient-to-br from-slate-700 via-navy-800 to-navy-900"
+                className="fixed inset-0 w-full h-full bg-gradient-to-br from-slate-600 via-navy-800 to-navy-900"
                 style={{
                     backgroundSize: '200% 200%',
                     animation: 'gradient 15s ease infinite',
