@@ -66,7 +66,7 @@ const Routes: FC = (): JSX.Element => {
                 />
 
                 {/* Redirect unknown routes to 404 */}
-                <Route path="*" element={<Navigate to="/404" replace />} />
+                {/* <Route path="*" element={<Navigate to="/404" replace />} /> */}
             </Route>
         </RouterRoutes>
     );

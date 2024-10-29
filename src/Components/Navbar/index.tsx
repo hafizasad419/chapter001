@@ -56,7 +56,7 @@ const Navbar: FC = (): JSX.Element => {
                     <div className="flex items-center justify-between h-16">
                         {/* Logo */}
                         <div className="flex-shrink-0">
-                            <NavLink to="/home">
+                            <NavLink to="/app/home">
                                 <img
                                     src="/logo.png"
                                     alt="Logo"
@@ -68,24 +68,28 @@ const Navbar: FC = (): JSX.Element => {
                         {/* Desktop Navigation */}
                         <div className="hidden md:flex items-center space-x-8 ml-10">
                             {navItems.map((item) => (
-                                <AnimatedNavLink 
-                                    key={item.path} 
-                                    to={item.path} 
-                                    name={item.name} 
+                                <AnimatedNavLink
+                                    key={item.path}
+                                    to={item.path}
+                                    name={item.name}
                                     className="text-cyan-100 hover:text-cyan-300"
                                 />
                             ))}
                         </div>
 
                         {/* CTA Button */}
-                        <div className="hidden md:block">
-                            <Button className="bg-cyan-500 text-white hover:bg-cyan-600 shadow-lg">
-                                Get Started
-                            </Button>
+                        <div className='hidden md:block'>
+                            <NavLink to={"/app/services"}>
+                                <Button
+                                    title="Get Started" />
+
+                            </NavLink>
                         </div>
+
 
                         {/* Hamburger Menu */}
                         <button
+
                             id="hamburger"
                             onClick={(e) => {
                                 e.stopPropagation();
@@ -114,7 +118,7 @@ const Navbar: FC = (): JSX.Element => {
                     fixed top-0 right-0 h-full w-full 
                     bg-gradient-to-br from-black via-navy-800 to-navy-900 backdrop-blur-lg
                     transform transition-transform duration-300 ease-in-out
-                    ${isOpen ? 'translate-x-0' : 'translate-x-full'}
+                    ${isOpen ? 'translate-y-0' : 'translate-y-full'}
                     z-50 md:hidden
                 `}
             >
@@ -126,25 +130,30 @@ const Navbar: FC = (): JSX.Element => {
                     <X size={24} />
                 </button>
 
-                <div className="flex flex-col p-8 pt-20 space-y-6">
+                <div className="flex flex-col items-center p-8 pt-20 space-y-6">
                     {navItems.map((item) => (
                         <NavLink
                             key={item.path}
                             to={item.path}
                             onClick={() => setIsOpen(false)}
                             className={({ isActive }) => `
-                                text-3xl text-cyan-100 hover:text-cyan-300 
+                                text-5xl font-extrabold text-cyan-100 hover:text-cyan-300 
                                 py-3 px-6 rounded-lg 
                                 transition-all duration-200
-                                ${isActive ? 'bg-navy-500/10' : ''}
+                                ${isActive ? 'bg-navy-300/20' : ''}
                             `}
                         >
                             {item.name}
                         </NavLink>
                     ))}
-                    <Button className="mt-8 bg-cyan-500 text-white hover:bg-cyan-600 px-6 py-3 text-2xl shadow-lg">
-                        Get Started
-                    </Button>
+                </div>
+                <div className='px-8'>
+                    <NavLink to={"/app/services"} onClick={() => setIsOpen(false)}>
+                        <button className='btn w-full'>
+                            Get Started
+                        </button>
+                    </NavLink>
+
                 </div>
             </div>
         </>

@@ -1,14 +1,19 @@
 import { motion } from 'framer-motion'
 import Button from "@src/Components/Button"
+import TrustedBy from '@src/Components/TrustedBy'
+import ParallaxPage from '@src/Pages/ParallaxPage'
+import { NavLink } from 'react-router-dom';
+
 // import Introduction from './Introduction'
 
 export default function LandingPage() {
+
     return (
         <>
-            <div className="relative min-h-screen w-full overflow-hidden">
+            <div className=" w-full overflow-hidden">
                 {/* Background gradient */}
                 <div
-                    className="fixed inset-0 w-full h-full bg-gradient-to-br from-slate-600 via-navy-800 to-navy-900"
+                    className="w-full h-full bg-gradient-to-br from-slate-600 via-navy-800 to-navy-900"
                     style={{
                         backgroundSize: '200% 200%',
                         animation: 'gradient 15s ease infinite',
@@ -41,16 +46,31 @@ export default function LandingPage() {
                             </h2>
                             <p className="mt-4 text-xl text-cyan-200">Let's start your new chapter</p>
 
-                            <div className="flex justify-center">
-                                <Button size="lg" className="mt-8 bg-cyan-500 text-white hover:bg-cyan-600 shadow-lg transform hover:scale-105">
-                                    Explore Now
-                                </Button>
+                            <div className="flex justify-center py-4">
+                                <NavLink to={"/app/services"}>
+                                    <Button title='Explore Now'
+                                        className='py-8'
+                                    />
+                                </NavLink>
+
                             </div>
                         </div>
                     </motion.div>
                 </div>
             </div>
             {/* <Introduction /> */}
+            <TrustedBy />
+
+            <ParallaxPage />
+            <section className='py-16 flex justify-center'>
+                <button className="btn !px-16">
+                    <NavLink to={"/app/services"}>
+                        Get Started
+                    </NavLink>
+                </button>
+            </section>
+
+
         </>
     )
 }

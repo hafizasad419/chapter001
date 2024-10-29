@@ -1,82 +1,56 @@
-import React from 'react';
-import { Loader2 } from "lucide-react";
-import { cn } from "@src/lib/utils";
+import { AnimationControls, motion, useAnimation } from 'framer-motion';
+import { marquee } from '@src/utils/animations.ts';
 
-// Define button variants and sizes
-type ButtonVariant = 'solid' | 'outline' | 'ghost';
-type ButtonSize = 'sm' | 'md' | 'lg';
-
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-    variant?: ButtonVariant;
-    size?: ButtonSize;
-    loading?: boolean;
-    fullWidth?: boolean;
+// Define button props interface
+interface ButtonProps {
+    title: string;
+    link?: string;
+    isSmall?: boolean;
+    background?: string; // You can specify a background color here
+    onClick?: () => {};
+    className?: string
 }
 
-const Button: React.FC<ButtonProps> = ({
-    children,
-    variant = 'solid',
-    size = 'md',
-    className,
-    disabled,
-    loading = false,
-    fullWidth = false,
-    ...props
-}) => {
-    // Base styles
-    const baseStyles = "relative font-medium rounded-lg transition-all duration-200 flex items-center justify-center";
+interface ButtonTitleProps {
+    title: string;
+    isSmall?: boolean;
+    controls: AnimationControls;
+}
 
-    // Size styles
-    const sizeStyles = {
-        sm: 'px-3 py-1.5 text-sm',
-        md: 'px-4 py-2 text-base',
-        lg: 'px-6 py-3 text-lg'
-    };
+const ButtonTitle: React.FC<ButtonTitleProps> = ({ title, isSmall, controls, }) => (
+    <motion.span
+        variants={marquee}
+        initial="initial"
+        animate={controls}
+        className={`inline-block text-center px-[0.7em] pt-[0.2em] pb-[0.6em] text-white ${isSmall ? 'text-base' : 'text-xl'
+            }`}
+    >
+        {title}
+    </motion.span>
+);
 
-    // Variant styles
-    const variantStyles = {
-        solid: `
-            bg-red-800/10 hover:bg-red-500/20 
-            text-navy-500
-            backdrop-blur-sm
-            disabled:bg-gray-300 disabled:text-gray-500
-        `,
-        outline: `
-            border-2 border-red-800/20 hover:border-red-500/40
-            text-navy-500 hover:bg-red-500/10
-            backdrop-blur-sm
-            disabled:border-gray-300 disabled:text-gray-500
-        `,
-        ghost: `
-            text-navy-500 hover:bg-red-500/10
-            backdrop-blur-sm
-            disabled:text-gray-500
-        `
-    };
+const Button: React.FC<ButtonProps> = ({ title, isSmall, background, onClick, className }) => {
+    const controls = useAnimation();
 
-    // Width style
-    const widthStyle = fullWidth ? 'w-full' : '';
-
-    // Combined styles
-    const combinedStyles = cn(
-        baseStyles,
-        sizeStyles[size],
-        variantStyles[variant],
-        widthStyle,
-        'disabled:cursor-not-allowed disabled:opacity-60',
-        className
-    );
+    const handleMouseEnterControls = () => controls.start('animate');
+    const handleMouseLeaveControls = () => controls.start('initial');
 
     return (
         <button
-            className={combinedStyles}
-            disabled={disabled || loading}
-            {...props}
+            onClick={onClick}
+            onMouseEnter={handleMouseEnterControls}
+            onMouseLeave={handleMouseLeaveControls}
+            style={{
+                backgroundColor: background || '#258f9f', // Default background color, change as needed
+            }}
+            className={`relative group font-heading-narrow font-bold text-center ${isSmall ? 'text-base' : 'text-xl'
+                } text-[var(--black)] px-[0.7em] pt-[0.3em] pb-[0.3em] tracking-[0.01em] rounded ${className}`}
         >
-            {loading && (
-                <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-            )}
-            {children}
+            <span className="opacity-0"> {title} </span>
+            <span className="absolute top-0 left-0 bottom-0 w-full overflow-hidden pointer-events-none whitespace-nowrap">
+                <ButtonTitle title={title} isSmall={isSmall} controls={controls} />
+                <ButtonTitle title={title} isSmall={isSmall} controls={controls} />
+            </span>
         </button>
     );
 };
