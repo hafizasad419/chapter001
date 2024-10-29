@@ -10,7 +10,7 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-    { name: 'Home', path: '/' },
+    { name: 'Home', path: '/home' },
     { name: 'About', path: '/about' },
     { name: 'Services', path: '/services' },
     { name: 'Contact', path: '/contact' },
@@ -56,7 +56,7 @@ const Navbar: FC = (): JSX.Element => {
                     <div className="flex items-center justify-between h-16">
                         {/* Logo */}
                         <div className="flex-shrink-0">
-                            <NavLink to="/">
+                            <NavLink to="/home">
                                 <img
                                     src="/logo.png"
                                     alt="Logo"

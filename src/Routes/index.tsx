@@ -9,6 +9,7 @@ import { lazy, Suspense } from 'react';
 const About = lazy(() => import('@src/Pages/About'));
 const Services = lazy(() => import('@src/Pages/Services'));
 const Contact = lazy(() => import('@src/Pages/Contact'));
+const TwoPanels = lazy(() => import('@src/Pages/TwoPanels'));
 const NotFound = lazy(() => import('@src/Pages/NotFound'));
 
 // Loading component for suspense fallback
@@ -21,7 +22,9 @@ const PageLoader: FC = () => (
 const Routes: FC = (): JSX.Element => {
     return (
         <RouterRoutes>
-            <Route path="/" element={<Layout />}>
+            <Route path='/' element={<TwoPanels />} />
+
+            <Route path="/home" element={<Layout />}>
                 {/* Public routes */}
                 <Route index element={<LandingPage />} />
 
