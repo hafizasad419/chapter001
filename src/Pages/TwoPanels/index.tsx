@@ -9,14 +9,14 @@ const TwoPanels: React.FC = () => {
     };
 
     const handleLeftLogoClick = () => {
-        navigate('/home'); // Redirects to the current website's home page
+        navigate('/app'); // Redirects to the current website's home page
     };
 
     return (
         <div className="flex flex-col sm:flex-row h-svh md:h-dvh w-screen">
             {/* Left Panel */}
             <div
-                className="flex-1 bg-gradient-to-r from-blue-500 via-cyan-400 to-teal-300  flex justify-center items-center relative cursor-pointer"
+                className="flex-1 bg-[#BE2026]  flex justify-center items-center relative cursor-pointer"
                 onClick={handleLeftLogoClick}
             >
                 <img

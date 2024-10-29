@@ -10,10 +10,10 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-    { name: 'Home', path: '/home' },
-    { name: 'About', path: '/about' },
-    { name: 'Services', path: '/services' },
-    { name: 'Contact', path: '/contact' },
+    { name: 'Home', path: 'home' },
+    { name: 'About', path: 'about' },
+    { name: 'Services', path: 'services' },
+    { name: 'Contact', path: 'contact' },
 ];
 
 const Navbar: FC = (): JSX.Element => {

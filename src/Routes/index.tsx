@@ -24,9 +24,10 @@ const Routes: FC = (): JSX.Element => {
         <RouterRoutes>
             <Route path='/' element={<TwoPanels />} />
 
-            <Route path="/home" element={<Layout />}>
+            <Route path="/app" element={<Layout />}>
                 {/* Public routes */}
-                <Route index element={<LandingPage />} />
+                <Route index element={<Navigate to={"home"} />} />
+                <Route path='home' element={<LandingPage />} />
 
                 {/* Lazy loaded routes */}
                 <Route
