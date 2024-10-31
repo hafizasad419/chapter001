@@ -12,8 +12,11 @@ interface NavItem {
 const navItems: NavItem[] = [
     { name: 'Home', path: 'home' },
     { name: 'About', path: 'about' },
+    { name: 'Our Team', path: 'team' },
     { name: 'Services', path: 'services' },
     { name: 'Contact', path: 'contact' },
+    { name: 'Blogs', path: 'blogs' },
+    { name: 'Careers', path: 'careers' },
 ];
 
 const Navbar: FC = (): JSX.Element => {
@@ -72,7 +75,7 @@ const Navbar: FC = (): JSX.Element => {
                                     key={item.path}
                                     to={item.path}
                                     name={item.name}
-                                    className="text-cyan-100 hover:text-cyan-300"
+                                    className="text-white hover:text-white"
                                 />
                             ))}
                         </div>
@@ -95,7 +98,7 @@ const Navbar: FC = (): JSX.Element => {
                                 e.stopPropagation();
                                 setIsOpen(!isOpen);
                             }}
-                            className="md:hidden p-2 rounded-lg text-cyan-100 hover:bg-cyan-500/10 transition-colors"
+                            className="md:hidden p-2 rounded-lg text-white hover:bg-cyan-500/10 transition-colors"
                         >
                             {isOpen ? <X size={30} /> : <Menu size={30} />}
                         </button>
@@ -137,7 +140,7 @@ const Navbar: FC = (): JSX.Element => {
                             to={item.path}
                             onClick={() => setIsOpen(false)}
                             className={({ isActive }) => `
-                                text-5xl font-extrabold text-cyan-100 hover:text-cyan-300 
+                                text-5xl font-extrabold text-white hover:text-white 
                                 py-3 px-6 rounded-lg 
                                 transition-all duration-200
                                 ${isActive ? 'bg-navy-300/20' : ''}

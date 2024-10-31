@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
           {/* Privacy Policy Link */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="group flex items-center space-x-2 text-cyan-100 hover:text-cyan-300 transition-colors duration-300"
+            className="group flex items-center space-x-2 text-white hover:text-white transition-colors duration-300"
           >
             <NavLink to="/privacy-policy" className="text-lg font-medium">
               Privacy Policy
@@ -56,12 +56,12 @@ const Footer: React.FC = () => {
 
           {/* Copyright */}
           <motion.p
-            className="text-cyan-100/70 text-sm"
+            className="text-white/70 text-sm"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
           >
-            © {new Date().getFullYear()} Chapter001 Pakistan. All rights reserved.
+            © 2019 Chapter001 Pakistan. All rights reserved.
           </motion.p>
         </div>
       </div>

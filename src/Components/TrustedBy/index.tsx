@@ -35,11 +35,11 @@ function TrustedBy() {
         <div className='py-12'>
             <motion.h2
                 {...animationSettings}
-                className="text-cyan-500 text-5xl md:text-6xl font-bold text-center"
+                className="text-white text-5xl md:text-6xl font-bold text-center"
             >
                 Trusted By
             </motion.h2>
-            <div className="overflow-hidden w-full mt-20">
+            <div className="overflow-hidden w-full mt-16 bg-white py-12">
                 <Marquee gradient={false} speed={80}>
                     {logos.map((logo, index) => (
                         <div key={index} className="px-4">

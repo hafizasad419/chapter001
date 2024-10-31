@@ -4,6 +4,8 @@ import { Routes as RouterRoutes, Route, Navigate } from 'react-router-dom';
 import Layout from '@src/Components/Layout';
 import LandingPage from '@src/Pages/LandingPage';
 import { lazy, Suspense } from 'react';
+import Careers from '@src/Pages/Careers';
+import OurTeam from '@src/Pages/OurTeam';
 
 // Lazy load other pages for better performance
 const About = lazy(() => import('@src/Pages/About'));
@@ -11,6 +13,8 @@ const Services = lazy(() => import('@src/Pages/Services'));
 const Contact = lazy(() => import('@src/Pages/Contact'));
 const TwoPanels = lazy(() => import('@src/Pages/TwoPanels'));
 const NotFound = lazy(() => import('@src/Pages/NotFound'));
+const Blogs = lazy(() => import('@src/Pages/Blogs'));
+
 
 // Loading component for suspense fallback
 const PageLoader: FC = () => (
@@ -43,6 +47,30 @@ const Routes: FC = (): JSX.Element => {
                     element={
                         <Suspense fallback={<PageLoader />}>
                             <Services />
+                        </Suspense>
+                    }
+                />
+                <Route
+                    path="blogs"
+                    element={
+                        <Suspense fallback={<PageLoader />}>
+                            <Blogs />
+                        </Suspense>
+                    }
+                />
+                <Route
+                    path="careers"
+                    element={
+                        <Suspense fallback={<PageLoader />}>
+                            <Careers />
+                        </Suspense>
+                    }
+                />
+                <Route
+                    path="team"
+                    element={
+                        <Suspense fallback={<PageLoader />}>
+                            <OurTeam />
                         </Suspense>
                     }
                 />

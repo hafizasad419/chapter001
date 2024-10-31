@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { Image, TrendingUp, Hash, Search, Laptop, Speaker } from 'lucide-react';
+import { NavLink } from 'react-router-dom';
 
 const services = [
     {
@@ -91,12 +92,12 @@ export default function Services() {
             >
                 <motion.h1
                     variants={itemVariants}
-                    className="text-5xl md:text-7xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-cyan-400 to-teal-300 mb-12"
+                    className="text-5xl md:text-7xl font-extrabold text-center text-white mb-12"
                 >
                     Our Services
                 </motion.h1>
 
-                <motion.p variants={itemVariants} className="text-cyan-100 text-lg md:text-xl text-center mb-16">
+                <motion.p variants={itemVariants} className="text-white text-lg md:text-xl text-center mb-16">
                     We offer a range of services designed to help businesses like yours succeed.
                 </motion.p>
 
@@ -112,10 +113,10 @@ export default function Services() {
                             onClick={() => setExpandedId(expandedId === service.id ? null : service.id)}
                         >
                             <div className="flex items-center mb-4">
-                                <div className="text-4xl text-cyan-400 mr-4">{service.icon}</div>
-                                <h2 className="text-2xl font-bold text-cyan-200">{service.title}</h2>
+                                <div className="text-4xl text-red-500 font-bold mr-4">{service.icon}</div>
+                                <h2 className="text-2xl font-bold text-red-500">{service.title}</h2>
                             </div>
-                            <p className="text-cyan-100 mb-4">{service.description}</p>
+                            <p className="text-white mb-4">{service.description}</p>
                             <AnimatePresence>
                                 {expandedId === service.id && (
                                     <motion.ul
@@ -123,7 +124,7 @@ export default function Services() {
                                         animate={{ opacity: 1, height: 'auto' }}
                                         exit={{ opacity: 0, height: 0 }}
                                         transition={{ duration: 0.3 }}
-                                        className="text-cyan-100 ml-6 list-disc"
+                                        className="text-white ml-6 list-disc"
                                     >
                                         {service.items.map((item, itemIndex) => (
                                             <li key={itemIndex} className="mb-2">{item}</li>
@@ -134,6 +135,13 @@ export default function Services() {
                         </motion.div>
                     ))}
                 </motion.div>
+                <section className='py-16 flex justify-center'>
+                    <NavLink to={"/app/contact"}>
+                <button className="btn !px-16">
+                        Get Now
+                </button>
+                    </NavLink>
+            </section>
             </motion.div>
         </div>
     );

@@ -31,7 +31,7 @@ export default function LandingPage() {
                     >
                         {/* 3D Text Effect */}
                         <div className="relative">
-                            <h1 className="text-7xl md:text-9xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-cyan-400 to-teal-300 drop-shadow-3xl-glow mb-4 ">
+                            <h1 className="text-7xl md:text-9xl font-extrabold text-white mb-4 ">
                                 CHAPTER 001
                             </h1>
 
@@ -41,10 +41,10 @@ export default function LandingPage() {
                             src="/logo.png" alt="" /> */}
 
 
-                            <h2 className="text-6xl md:text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-cyan-400 to-teal-300 drop-shadow-3xl-glow">
+                            <h2 className="text-6xl md:text-8xl font-extrabold text-white drop-shadow-3xl-glow">
                                 PAKISTAN
                             </h2>
-                            <p className="mt-4 text-xl text-cyan-200">Let's start your new chapter</p>
+                            <p className="mt-4 text-xl text-white">Let's start your new chapter</p>
 
                             <div className="flex justify-center py-4">
                                 <NavLink to={"/app/services"}>
@@ -63,11 +63,11 @@ export default function LandingPage() {
 
             <ParallaxPage />
             <section className='py-16 flex justify-center'>
-                <button className="btn !px-16">
                     <NavLink to={"/app/services"}>
+                <button className="btn !px-16">
                         Get Started
-                    </NavLink>
                 </button>
+                    </NavLink>
             </section>
 
 

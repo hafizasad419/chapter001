@@ -32,7 +32,7 @@ export default function ParallaxSection({
                         src={imgSrc}
                         alt={imgAlt}
                         className="absolute inset-0 w-[30vw] mx-auto hidden md:block"
-                        style={{ top: '47%', transform: 'translateY(-50%) translateX(70%)',  }}
+                        style={{ top: '47%', transform: 'translateY(-50%) translateX(70%)', }}
                     />
                 </ParallaxBannerLayer>
                 <ParallaxBannerLayer speed={-30}>
@@ -72,7 +72,9 @@ export default function ParallaxSection({
                                     viewport={{ once: true }}
                                     className="lg:max-w-[500px] mb-5 text-lg lg:text-2xl font-light"
                                 >
-                                    {description}
+                                    {description.split('\n').map((line, index) => (
+                                        <p key={index} className="mb-2">{line}</p>
+                                    ))}
                                 </motion.p>
                             </Parallax>
                         </div>
