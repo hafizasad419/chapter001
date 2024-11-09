@@ -97,7 +97,10 @@ export default function Services() {
                     Our Services
                 </motion.h1>
 
-                <motion.p variants={itemVariants} className="text-white text-lg md:text-xl text-center mb-16">
+                <motion.p
+                    variants={itemVariants}
+                    className="text-white text-lg md:text-xl text-center mb-16"
+                >
                     We offer a range of services designed to help businesses like yours succeed.
                 </motion.p>
 
@@ -109,14 +112,19 @@ export default function Services() {
                         <motion.div
                             key={service.id}
                             variants={itemVariants}
-                            className="bg-white bg-opacity-10 rounded-xl p-6 shadow-xl cursor-pointer overflow-hidden" // Add overflow-hidden here
+                            className="relative bg-white bg-opacity-10 rounded-xl p-6 shadow-xl cursor-pointer overflow-hidden group transition-transform duration-500 hover:bg-navy-500"
                             onClick={() => setExpandedId(expandedId === service.id ? null : service.id)}
                         >
                             <div className="flex items-center mb-4">
-                                <div className="text-4xl text-red-500 font-bold mr-4">{service.icon}</div>
-                                <h2 className="text-2xl font-bold text-red-500">{service.title}</h2>
+                                <div className="text-4xl text-red-500 font-bold mr-4">
+                                    {service.icon}
+                                </div>
+                                <h2 className="text-2xl font-bold text-red-500">
+                                    {service.title}
+                                </h2>
                             </div>
                             <p className="text-white mb-4">{service.description}</p>
+
                             <AnimatePresence>
                                 {expandedId === service.id && (
                                     <motion.ul
@@ -127,22 +135,33 @@ export default function Services() {
                                         className="text-white ml-6 list-disc"
                                     >
                                         {service.items.map((item, itemIndex) => (
-                                            <li key={itemIndex} className="mb-2">{item}</li>
+                                            <li key={itemIndex} className="mb-2">
+                                                {item}
+                                            </li>
                                         ))}
                                     </motion.ul>
                                 )}
                             </AnimatePresence>
+
+                            {/* Button appears on hover */}
+                            <div className="absolute inset-0 flex items-center justify-center bg-navy-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                <NavLink to="/app/contact">
+                                    <button className="btn ">
+                                        Contact
+                                    </button>
+                                </NavLink>
+                            </div>
                         </motion.div>
                     ))}
                 </motion.div>
-                <section className='py-16 flex justify-center'>
-                    <NavLink to={"/app/contact"}>
-                <button className="btn !px-16">
-                        Get Now
-                </button>
-                    </NavLink>
-            </section>
             </motion.div>
+            <div className="flex justify-center py-12">
+                <NavLink to="/app/contact">
+                    <button className="btn !px-24">
+                        Make Your Customized Plan
+                    </button>
+                </NavLink>
+            </div>
         </div>
     );
 }

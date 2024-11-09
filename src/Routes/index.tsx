@@ -4,8 +4,7 @@ import { Routes as RouterRoutes, Route, Navigate } from 'react-router-dom';
 import Layout from '@src/Components/Layout';
 import LandingPage from '@src/Pages/LandingPage';
 import { lazy, Suspense } from 'react';
-import Careers from '@src/Pages/Careers';
-import OurTeam from '@src/Pages/OurTeam';
+
 
 // Lazy load other pages for better performance
 const About = lazy(() => import('@src/Pages/About'));
@@ -14,6 +13,7 @@ const Contact = lazy(() => import('@src/Pages/Contact'));
 const TwoPanels = lazy(() => import('@src/Pages/TwoPanels'));
 const NotFound = lazy(() => import('@src/Pages/NotFound'));
 const Blogs = lazy(() => import('@src/Pages/Blogs'));
+const Careers = lazy(() => import('@src/Pages/Careers'));
 
 
 // Loading component for suspense fallback
@@ -66,14 +66,7 @@ const Routes: FC = (): JSX.Element => {
                         </Suspense>
                     }
                 />
-                <Route
-                    path="team"
-                    element={
-                        <Suspense fallback={<PageLoader />}>
-                            <OurTeam />
-                        </Suspense>
-                    }
-                />
+
                 <Route
                     path="contact"
                     element={

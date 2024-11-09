@@ -11,10 +11,10 @@
         py-4
         px-8
         text-white 
-        bg-[#258f9f] 
+        bg-[#BE2026] 
         rounded 
         transition-colors 
         duration-300 
-        hover:bg-[#1a6f7d] 
+        hover:bg-[#a6191e] 
         focus:outline-none 
 }

@@ -12,9 +12,7 @@ interface NavItem {
 const navItems: NavItem[] = [
     { name: 'Home', path: 'home' },
     { name: 'About', path: 'about' },
-    { name: 'Our Team', path: 'team' },
     { name: 'Services', path: 'services' },
-    { name: 'Contact', path: 'contact' },
     { name: 'Blogs', path: 'blogs' },
     { name: 'Careers', path: 'careers' },
 ];
@@ -82,9 +80,9 @@ const Navbar: FC = (): JSX.Element => {
 
                         {/* CTA Button */}
                         <div className='hidden md:block'>
-                            <NavLink to={"/app/services"}>
+                            <NavLink to={"/app/contact"}>
                                 <Button
-                                    title="Get Started" />
+                                    title="Contact Us" />
 
                             </NavLink>
                         </div>

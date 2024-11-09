@@ -16,11 +16,11 @@ const TwoPanels: React.FC = () => {
         <div className="flex flex-col sm:flex-row h-svh md:h-dvh w-screen">
             {/* Left Panel */}
             <div
-                className="flex-1 bg-[#BE2026]  flex justify-center items-center relative cursor-pointer"
+                className="flex-1 bg-[#002F47] flex justify-center items-center relative cursor-pointer"
                 onClick={handleLeftLogoClick}
             >
                 <img
-                    src="/logo.png"
+                    src="/logo-white.png"
                     alt="Adcom Logo"
                     className="w-[150px] h-auto"
                 />
@@ -29,7 +29,7 @@ const TwoPanels: React.FC = () => {
 
             {/* Right Panel */}
             <div
-                className="flex-1 bg-[#002F47] flex justify-center items-center relative cursor-pointer"
+                className="flex-1 bg-[#BE2026]  flex justify-center items-center relative cursor-pointer"
                 onClick={handleRightLogoClick}
             >
                 <img

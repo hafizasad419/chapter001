@@ -41,7 +41,7 @@ const Button: React.FC<ButtonProps> = ({ title, isSmall, background, onClick, cl
             onMouseEnter={handleMouseEnterControls}
             onMouseLeave={handleMouseLeaveControls}
             style={{
-                backgroundColor: background || '#258f9f', // Default background color, change as needed
+                backgroundColor: background || '#BE2026', // Default background color, change as needed
             }}
             className={`relative group font-heading-narrow font-bold text-center ${isSmall ? 'text-base' : 'text-xl'
                 } text-[var(--black)] px-[0.7em] pt-[0.3em] pb-[0.3em] tracking-[0.01em] rounded ${className}`}

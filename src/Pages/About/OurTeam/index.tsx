@@ -31,7 +31,7 @@ const OurTeam: React.FC = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen bg-gradient-to-br from-slate-800 via-navy-900 to-black py-12 px-4 sm:px-6 lg:px-8"
+      className="min-h-screen py-12 px-4 sm:px-6 lg:px-8"
     >
       <h1 className="text-5xl font-extrabold text-center text-white mb-12">
         Meet Our Team

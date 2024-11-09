@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion'
 import { Lightbulb, Users, Rocket } from 'lucide-react'
+import OurTeam from './OurTeam'
+import OurLegacy from './OurLegacy'
 
 export default function About() {
- 
+
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -68,8 +70,10 @@ export default function About() {
           </motion.div>
         </motion.div>
 
-      
+
       </motion.div>
+      <OurTeam />
+      <OurLegacy />
     </div>
   )
 }
