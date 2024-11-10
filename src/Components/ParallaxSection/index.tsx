@@ -1,6 +1,7 @@
 import { Parallax, ParallaxBanner, ParallaxBannerLayer } from 'react-scroll-parallax'
 import { motion } from 'framer-motion'
 import { pop } from '@src/utils/animations'
+import Triangle from '@src/Components/Triangle'
 
 interface ParallaxSectionProps {
     id: string
@@ -25,6 +26,7 @@ export default function ParallaxSection({
         <section
             id={id}
             className={`w-full min-h-screen relative ${bgColor} ${textColor} overflow-hidden`}
+            
         >
             <ParallaxBanner className="h-screen">
                 <ParallaxBannerLayer speed={-20}>
@@ -50,14 +52,18 @@ export default function ParallaxSection({
                                     {title}
                                 </h3>
                             </motion.div>
+
+                            <Triangle
+                                className="fixed -left-36 hidden md:block"
+                            />
                             {/* Title For Desktop */}
-                            <Parallax speed={10} className="w-full lg:w-1/2 lg:text-left">
+                            <Parallax speed={10} className="w-full lg:w-1/2 lg:text-left lg:-ml-28">
                                 <motion.h3
                                     variants={pop}
                                     initial="initial"
                                     whileInView="animate"
                                     viewport={{ once: true }}
-                                    className="hidden lg:block mb-11 font-extrabold leading-[0.85em] tracking-[0.01em] uppercase text-[56px] lg:text-[70px]"
+                                    className="hidden lg:block mb-11 font-extrabold leading-[0.85em] tracking-[0.01em] uppercase text-[56px] lg:text-[50px]"
                                 >
                                     {title}
                                 </motion.h3>
