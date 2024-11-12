@@ -10,7 +10,7 @@ export default function ParallaxPage() {
           title="Who are we?"
           description="Welcome to Chapter 001 Pakistan, your premier marketing agency in Pakistan. We are a team of experts dedicated to helping businesses like yours succeed in the competitive market. 
           Our services include digital marketing, social media management, SEO, website development, and PR handling."
-          imgSrc="/logo-white.png"
+          imgSrc="/logo-white-updated.png"
           imgAlt="Inspiring Image"
           bgColor="bg-navy-500"
           textColor="text-white"
@@ -24,13 +24,14 @@ export default function ParallaxPage() {
           imgAlt="Creative Image"
           bgColor="bg-white"
           textColor="text-navy-500"
+          reverse={true}
         />
         <ParallaxSection
           id="section3"
           title="Our Expertise"
           description="Our team of experts has years of experience in marketing and communications, and we're dedicated to delivering exceptional results for our clients. 
           We stay up-to-date with the latest industry trends and best practices to ensure that our clients receive the best possible service."
-          imgSrc="/logo-white.png"
+          imgSrc="/logo-white-updated.png"
           imgAlt="Groundbreaking Image"
           bgColor="bg-navy-500"
           textColor="text-white"

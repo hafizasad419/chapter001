@@ -6,7 +6,7 @@ import client3 from "@src/assets/TrustedBy/client3.png";
 import client4 from "@src/assets/TrustedBy/client4.png";
 import client5 from "@src/assets/TrustedBy/client5.png";
 import client6 from "@src/assets/TrustedBy/client6.png";
-import client7 from "@src/assets/TrustedBy/client7.png";
+// import client7 from "@src/assets/TrustedBy/client7.png";
 import client8 from "@src/assets/TrustedBy/client8.png";
 import client9 from "@src/assets/TrustedBy/client9.png";
 import client10 from "@src/assets/TrustedBy/client10.png";
@@ -22,7 +22,7 @@ const logos = [
     client4,
     client5,
     client6,
-    client7,
+    // client7,
     client8,
     client9,
     client10,
@@ -38,7 +38,7 @@ function TrustedBy() {
             >
                 Trusted By
             </motion.h2>
-            <div className="overflow-hidden w-full mt-16 bg-navy-500 py-12">
+            <div className="overflow-hidden w-full mt-16 bg-white py-12">
                 <Marquee gradient={false} speed={80}>
                     {logos.map((logo, index) => (
                         <div key={index} className="px-4">

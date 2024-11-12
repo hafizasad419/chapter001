@@ -20,7 +20,7 @@ const TwoPanels: React.FC = () => {
                 onClick={handleLeftLogoClick}
             >
                 <img
-                    src="/logo-white.png"
+                    src="/logo-white-updated.png"
                     alt="Adcom Logo"
                     className="w-[150px] h-auto"
                 />

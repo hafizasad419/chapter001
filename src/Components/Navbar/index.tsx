@@ -59,7 +59,7 @@ const Navbar: FC = (): JSX.Element => {
                         <div className="flex-shrink-0">
                             <NavLink to="/app/home">
                                 <img
-                                    src="/logo-white.png"
+                                    src="/logo-white-updated.png"
                                     alt="Logo"
                                     className="h-16 w-auto"
                                 />

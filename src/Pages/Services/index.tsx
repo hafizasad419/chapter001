@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
-import { Image, TrendingUp, Hash, Search, Laptop, Speaker } from 'lucide-react';
+import { Image, TrendingUp, Hash, Search, Laptop, Speaker, Video, User, Shield, BarChart } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 
 const services = [
@@ -54,8 +54,44 @@ const services = [
         icon: <Speaker />,
         description: "Our PR handling services are designed to help you manage your reputation and communicate effectively with your audience.",
         items: ["Media relations", "Crisis communication", "Reputation management", "Event planning"]
+    },
+    {
+        id: 6,
+        title: "Conversion Rate Optimization (CRO)",
+        icon: <TrendingUp />, // Add an appropriate icon
+        description: "Our CRO services focus on optimizing your website to increase conversions and improve user experience.",
+        items: ["A/B testing", "User experience optimization", "Funnel analysis", "Conversion tracking"]
+    },
+    {
+        id: 7,
+        title: "Video Marketing",
+        icon: <Video />, // Add an appropriate icon
+        description: "Our video marketing services help you engage your audience with visually compelling content.",
+        items: ["Video content creation", "YouTube optimization", "Video ads", "Animated videos"]
+    },
+    {
+        id: 8,
+        title: "Influencer and Affiliate Marketing",
+        icon: <User />, // Add an appropriate icon
+        description: "Our influencer and affiliate marketing services connect your brand with industry leaders and affiliates.",
+        items: ["Influencer outreach", "Affiliate program setup", "Partnership management", "Brand collaborations"]
+    },
+    {
+        id: 9,
+        title: "Online Reputation Management (ORM)",
+        icon: <Shield />, // Add an appropriate icon
+        description: "Our ORM services focus on protecting and enhancing your online reputation.",
+        items: ["Review monitoring", "Crisis management", "Reputation repair", "Brand image building"]
+    },
+    {
+        id: 10,
+        title: "Analytics and Reporting",
+        icon: <BarChart />, // Add an appropriate icon
+        description: "Our analytics and reporting services provide insights into your business's digital performance.",
+        items: ["Website analytics", "Campaign performance", "User behavior analysis", "Data-driven strategy development"]
     }
 ];
+
 
 export default function Services() {
     const [expandedId, setExpandedId] = useState<number | null>(null);
