@@ -1,7 +1,6 @@
 import { FC } from 'react';
 import { Outlet } from 'react-router-dom';
 import Navbar from '../Navbar';
-import Footer from '../Footer';
 import SmoothTicker from '../SmoothTicker';
 
 const Layout: FC = (): JSX.Element => {
@@ -12,7 +11,7 @@ const Layout: FC = (): JSX.Element => {
                 <main className="flex-grow">
                     <Outlet />
                 </main>
-                <Footer />
+              
             </div>
             <SmoothTicker />
         </>

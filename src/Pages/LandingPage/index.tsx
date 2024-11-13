@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import Button from "@src/Components/Button"
 import TrustedBy from '@src/Components/TrustedBy'
-import ParallaxPage from '@src/Pages/ParallaxPage'
+// import ParallaxPage from '@src/Pages/ParallaxPage'
 import { NavLink } from 'react-router-dom';
 // import CustomSlider from '@src/Components/CustomSlider';
 
@@ -99,7 +99,7 @@ export default function LandingPage() {
             {/* <Introduction /> */}
             <TrustedBy />
 
-            <ParallaxPage />
+            {/* <ParallaxPage /> */}
            
 
 

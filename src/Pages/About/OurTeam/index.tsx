@@ -37,7 +37,7 @@ const OurTeam: React.FC = () => {
         Our Team
       </h1>
       <h2 className="text-3xl  text-center text-white mb-12">
-        Meet The Masterminds
+        The Masterminds
       </h2>
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-8">
         {team.map((member, index) => (
